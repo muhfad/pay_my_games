@@ -46,4 +46,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/gas-migrate', function () {
+    $exitCode = Artisan::call('migrate:fresh', [
+        '--force' => true,
+    ]);
+    return "Hasil Migrasi: " . ($exitCode === 0 ? "SUKSES BOS!" : "GAGAL!");
+});
+
 require __DIR__.'/auth.php';
