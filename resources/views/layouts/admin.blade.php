@@ -26,9 +26,6 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="/" class="text-white hover:text-yellow-300 transition">
-                    Kembali ke Site
-                </a>
                 <span class="text-white">
                     {{ auth()->user()->name }}
                 </span>
